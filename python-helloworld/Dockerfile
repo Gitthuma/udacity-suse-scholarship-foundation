@@ -11,7 +11,7 @@ COPY . /app
 WORKDIR /app
 
 #Add Port of Access
-ENV PORT 80
+ENV PORT 8080
 
 #Install dependancies that the app will need
 RUN pip install -r requirements.txt
