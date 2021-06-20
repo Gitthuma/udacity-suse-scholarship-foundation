@@ -11,7 +11,8 @@ COPY . /go/src/app
 
 #to build the application, use go build -o helloworld command, where -o helloworld will create the binary of the application with the name helloworld
 #Added go mode init command
-RUN go mod init go build -o helloworld
+#Add && to run two commands
+RUN go mod init && go build -o helloworld
 
 #the application should be accessible on port 6111
 EXPOSE 6111
