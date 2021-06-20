@@ -5,3 +5,6 @@ FROM golang:alpine
 
 #set the working directory to /go/src/app
 WORKDIR /go/src/app
+
+#copy all the files from the current directory to the container working directory
+COPY . /go/src/app
