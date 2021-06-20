@@ -2,3 +2,6 @@
 
 #use the golang:alpine base image
 FROM golang:alpine
+
+#set the working directory to /go/src/app
+WORKDIR /go/src/app
