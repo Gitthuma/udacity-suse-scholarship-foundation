@@ -10,7 +10,8 @@ WORKDIR /go/src/app
 COPY . /go/src/app
 
 #to build the application, use go build -o helloworld command, where -o helloworld will create the binary of the application with the name helloworld
-RUN go build -o helloworld
+#Added go mode init command
+RUN go mod init go build -o helloworld
 
 #the application should be accessible on port 6111
 EXPOSE 6111
