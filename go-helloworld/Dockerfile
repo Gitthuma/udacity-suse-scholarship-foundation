@@ -14,3 +14,6 @@ RUN go build -o helloworld
 
 #the application should be accessible on port 6111
 EXPOSE 6111
+
+#the command to start the container is to invoke the binary created earlier, which is ./helloworld
+CMD [ "./helloworld" ]
