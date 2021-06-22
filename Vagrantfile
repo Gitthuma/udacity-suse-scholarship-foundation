@@ -13,6 +13,8 @@ Vagrant.configure("2") do |config|
 
   #Configure parametres for virtual box provider. To start we set the virtual box provider
   config.vm.provider "virtualbox" do |vb|
+    #set virtual box memory
+    vb.memory = "4096"
 
   end
 
