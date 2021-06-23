@@ -5,8 +5,9 @@ ENV["TERM"]="linux"
 Vagrant.configure("2") do |config|
 
   #Set image for the virtual box. In our case we are using a virtual box base image with the version declared
+  #Changed config.vm.box_version to an available version
   config.vm.box = "opensuse/Leap-15.2.x86_64"
-  config.vm.box_version = "15.2.31.242"
+  config.vm.box_version = "15.2.31.479"
 
   #Set static ip for the virtual box. This will be the access point for the virtual box.
   config.vm.network "private_network", ip: "192.168.50.4"
