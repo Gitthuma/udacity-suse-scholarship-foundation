@@ -17,6 +17,8 @@ Vagrant.configure("2") do |config|
     vb.memory = "4096"
     #set virtualbox cpu
     vb.cpus = 4
+    #set customized parametres to make sure it can run workloads that are abit higher in intensity.
+    vb.customize ["modifyvm", :id, "--ioapic", "on"]
 
   end
 
