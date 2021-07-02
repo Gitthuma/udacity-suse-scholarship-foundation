@@ -10,7 +10,9 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "15.2.31.479"
 
   #Set static ip for the virtual box. This will be the access point for the virtual box.
+  #Forward 192.168.50.4 (vm) to localhost of the host os
   config.vm.network "private_network", ip: "192.168.50.4"
+  config.vm.network "forwarded_port", guest: 6111, host: 6111, host_ip: "127.0.0.1"
 
   #Configure parametres for virtual box provider. To start we set the virtual box provider
   config.vm.provider "virtualbox" do |vb|
