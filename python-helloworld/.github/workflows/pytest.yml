@@ -20,7 +20,8 @@ jobs:
 
     #Create a step section with the steps to run the Pytest
     steps:
-      - 
+      #First step is to check out our code, this involves taking the current code with the new commit and reference it
+      - uses: actions/checkout@v2
 
 
   
