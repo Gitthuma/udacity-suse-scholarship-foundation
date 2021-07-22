@@ -13,5 +13,10 @@ jobs:
     #Define operating system on which to run tests
     runs-on: ubuntu-latest
 
+    #Define strategies to run our test on different python versions
+    strategy:
+      matrix:
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
+
 
   
