@@ -6,4 +6,7 @@ on: [push]
 
 #Create a job section where we will define steps to be run for our Pytest
 jobs:
+
+#Call build to execute the different steps for our Pytest
+  build:
   
