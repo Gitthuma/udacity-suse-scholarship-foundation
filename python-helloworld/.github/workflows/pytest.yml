@@ -37,7 +37,12 @@ jobs:
         run: 
           python -m pip install --upgrade pip
           pip istall pytest
-          if [ -f reuirements.txt ]; then pip install -r reuirements.txt; fi   
+          if [ -f reuirements.txt ]; then pip install -r reuirements.txt; fi 
+
+      #Fourth and last step is to run the pytest
+      - name: Test with pytest
+        run:  |
+          pytest   
 
 
 
