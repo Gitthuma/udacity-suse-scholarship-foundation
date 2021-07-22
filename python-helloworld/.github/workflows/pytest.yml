@@ -3,3 +3,7 @@ name: Pytest
 
 #State when action should run, in our case on every push
 on: [push]
+
+#Create a job section where we will define steps to be run for our Pytest
+jobs:
+  
