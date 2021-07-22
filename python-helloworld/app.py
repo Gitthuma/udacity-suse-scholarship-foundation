@@ -71,4 +71,4 @@ if __name__ == "__main__":
     # stram logs to app.log file
     logging.basicConfig(filename='app.log', level=logging.DEBUG, force=True)
 
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=8080)
