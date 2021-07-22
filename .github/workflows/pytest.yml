@@ -1,0 +1,45 @@
+#Name action to Pytest
+name: Pytest
+
+#State when action should run, in our case on every push
+on: [push]
+
+#Create a job section where we will define steps to be run for our Pytest
+jobs:
+
+  #Call build to execute the different steps for our Pytest
+  build:
+
+    #Define operating system on which to run tests
+    runs-on: ubuntu-latest
+
+    #Define strategies to run our test on different python versions
+    strategy:
+      matrix:
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
+
+    #Create a step section with the steps to run the Pytest
+    steps:
+
+      #First step is to check out our code, this involves taking the current code with the new commit and reference it
+      - uses: actions/checkout@v2
+
+      #Second step is to install python
+      - name: Set up Python ${{ matrix.python-version }}
+        #For that we use the set up python action
+        uses: actions/setup-python@v2
+        #We then have a for loop to set up python for each version that we have
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      #Third step is to install all the dependancies necessary to run our application
+      - name: Install dependencies
+        run: 
+          python -m pip install --upgrade pip
+          pip istall pytest
+          if [ -f reuirements.txt ]; then pip install -r reuirements.txt; fi 
+
+      #Fourth and last step is to run the pytest
+      - name: Test with pytest
+        run:  |
+          pytest   
