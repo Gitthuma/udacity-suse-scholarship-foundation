@@ -26,8 +26,12 @@ jobs:
 
       #Second step is to install python
       - name: Set up Python ${{ matrix.python-version }}
-      #For that we use the set up python action
+        #For that we use the set up python action
         uses: actions/setup-python@v2
+        #We then have a for loop to set up python for each version that we have
+        with:
+          python-version: ${{ matrix.python-version }}
+      
 
 
 
