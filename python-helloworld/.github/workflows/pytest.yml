@@ -1,2 +1,5 @@
 #Name action to Pytest
 name: Pytest
+
+#State when action should run, in our case on every push
+on: [push]
